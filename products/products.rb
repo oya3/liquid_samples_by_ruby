@@ -15,5 +15,5 @@ if products_response.code != '200'
   exit
 end
 products = JSON.parse(products_response.body)
-File.write 'products.json', products.to_json
+File.write 'products.json', JSON.pretty_generate(products)
 File.write 'products.yml', products.to_yaml

@@ -31,4 +31,5 @@ request.add_field('X-Quoine-Auth', signature)
 request.add_field('Content-Type', 'application/json')
 
 response = http.request(request)
+# response.code, response.body ...
 binding.pry

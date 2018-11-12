@@ -22,5 +22,5 @@ if response.code != '200'
 end
 executions = JSON.parse(response.body)
 
-File.write 'executions.json', executions.to_json
+File.write 'executions.json', JSON.pretty_generate(executions)
 File.write 'executions.yml', executions.to_yaml

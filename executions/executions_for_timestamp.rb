@@ -27,5 +27,5 @@ if response.code != '200'
 end
 executions = JSON.parse(response.body)
 
-File.write 'executions_for_timestamp.json', executions.to_json
+File.write 'executions_for_timestamp.json', JSON.pretty_generate(executions)
 File.write 'executions_for_timestamp.yml', executions.to_yaml

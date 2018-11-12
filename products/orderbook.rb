@@ -16,5 +16,5 @@ if orderbook_response.code != '200'
   exit
 end
 orderbook = JSON.parse(orderbook_response.body)
-File.write 'orderbook.json', orderbook.to_json
+File.write 'orderbook.json', JSON.pretty_generate(orderbook)
 File.write 'orderbook.yml', orderbook.to_yaml

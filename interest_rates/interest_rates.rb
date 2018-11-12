@@ -21,5 +21,5 @@ if response.code != '200'
   exit
 end
 interest_rates = JSON.parse(response.body)
-File.write 'interest_rates.json', interest_rates.to_json
+File.write 'interest_rates.json', JSON.pretty_generate(interest_rates)
 File.write 'interest_rates.yml', interest_rates.to_yaml
