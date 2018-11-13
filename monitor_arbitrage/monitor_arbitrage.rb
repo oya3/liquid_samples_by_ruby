@@ -49,9 +49,8 @@ while true do
   end_time = Time.now.to_i
   # 1:BTC=QASH:x
   unit = results[0]['last_traded_price'].to_f * results[1]['last_traded_price'].to_f
-  
   arbitrage = "[QASH: #{results[2]['last_traded_price'].to_f}, BTC:#{unit}]"
-  rate = results[2]['last_traded_price'].to_f / unit
+  rate = ((results[2]['last_traded_price'].to_f - unit) / unit) * 100.0
   price = "#{results[0]['last_traded_price']}, #{results[1]['last_traded_price']}, #{results[2]['last_traded_price']}"
   print("#{count}:#{Time.at(start_time)}-#{Time.at(end_time)}: #{rate}: #{arbitrage}: #{price}\n")
   count += 1
